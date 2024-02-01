@@ -8,6 +8,8 @@ public interface IModelRepository
 
     Task InsertAsync(object element);
 
+    Task UpdateAsync(object element);
+
     Task DeleteAsync(object element);
     
     Task<List<TModel>> QueryGetAsync<TModel>() where TModel : class, IBaseModel, new();

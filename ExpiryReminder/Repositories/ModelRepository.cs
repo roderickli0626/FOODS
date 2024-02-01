@@ -80,6 +80,20 @@ public class ModelRepository : IModelRepository
         }
     }
 
+    public async Task UpdateAsync(object element)
+    {
+        await _mutexHolder.AcquireMutexIfNeededAsync();
+
+        try
+        {
+            await _asyncConnection.UpdateAsync(element);
+        }
+        finally
+        {
+            _mutexHolder.ReleaseMutex();
+        }
+    }
+
     public async Task DeleteAsync(object element)
     {
         try

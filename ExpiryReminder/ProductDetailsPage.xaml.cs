@@ -54,7 +54,7 @@ public partial class ProductDetailsPage : ContentPage
     {
         if (sender is Microsoft.Maui.Controls.Image editIcon && editIcon.BindingContext is ProductItem productItem)
         {
-            await DisplayAlert(productItem.Name, productItem.Description, "Okay");
+            await Shell.Current.Navigation.PushAsync(new ProductEditPage(productItem));
         }
     }
 }

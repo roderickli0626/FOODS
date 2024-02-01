@@ -252,6 +252,13 @@ public partial class MainPage : ContentPage
             Price = string.IsNullOrEmpty(ProductPrice.Text) ? "0" : ProductPrice.Text
         };
 
+        var _productsItems = await _repository.QueryGetAsync<ProductItem>();
+        if (_productsItems.Count > 29)
+        {
+            await DisplayAlert("Alert", "In free version, you can store only 30 products. For more product, please get purchased one.", "Okay");
+            return;
+        }
+
         await _repository.InsertAsync(item);
 
         await SetNotificationForExpiry(item.ExpiryDate, item.Name);
