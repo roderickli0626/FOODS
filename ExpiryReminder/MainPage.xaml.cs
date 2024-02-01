@@ -15,6 +15,9 @@ using Plugin.LocalNotification.EventArgs;
 using Plugin.Maui.Audio;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using AndroidX.Navigation;
+using Android.Content.Res;
+using Android.Hardware;
 
 namespace ExpiryReminder;
 
@@ -48,6 +51,11 @@ public partial class MainPage : ContentPage
         if (player.IsPlaying)
         {
             player.Stop();
+        }
+
+        if (App.IsPreview)
+        {
+            Shell.Current.GoToAsync(nameof(PreviewPage));
         }
     }
 

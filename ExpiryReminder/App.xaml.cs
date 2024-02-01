@@ -8,5 +8,7 @@ public partial class App : Application
 
         MainPage = new AppShell();
     }
+
+    public static bool IsPreview = true;
 }
 
