@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="false">
     <ScrollView>
         <VerticalStackLayout>
-            <Button Text="START"  Clicked="Button_Clicked" Margin="10, 10" WidthRequest="100" HorizontalOptions="End"/>
+            <Button Text="INIZIO"  Clicked="Button_Clicked" Margin="10, 10" WidthRequest="100" HorizontalOptions="End"/>
             <Image Source="preview.png" HorizontalOptions="Center"></Image>
         </VerticalStackLayout>
     </ScrollView>

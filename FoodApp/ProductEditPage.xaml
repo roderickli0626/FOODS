@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodApp.ProductEditPage"
-             Title="Product Edit">
+             Title="Modifica del prodotto">
     <Grid>
         <ScrollView x:Name="scrollViewEditData" Margin="0">
             <VerticalStackLayout Spacing="20" Padding="20">
@@ -22,36 +22,36 @@
                         </StackLayout>
 
                         <StackLayout Grid.Row="1" VerticalOptions="Start" Spacing="10">
-                            <Label Text="Product Label:" FontSize="Medium" Margin="5, 0" />
-                            <Entry x:Name="ProductLabel" Placeholder="Enter Product Name" />
+                            <Label Text="Etichetta:" FontSize="Medium" Margin="5, 0" />
+                            <Entry x:Name="ProductLabel" Placeholder="Prodotto" />
 
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                    <Label Text="Barcode:" FontSize="Medium" Margin="6, 0" />
-                                    <Entry x:Name="ProductBarcode" Placeholder="Enter Barcode" />
+                                    <Label Text="Lista Prodotti:" FontSize="Medium" Margin="6, 0" />
+                                    <Entry x:Name="ProductBarcode" Placeholder="Codice a Barre" />
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                    <Label Text="Price:" FontSize="Medium" Margin="6, 0" />
-                                    <Entry x:Name="ProductPrice" Placeholder="Enter Price" />
+                                    <Label Text="Prezzo:" FontSize="Medium" Margin="6, 0" />
+                                    <Entry x:Name="ProductPrice" Placeholder="Inserisci il Prezzo" />
                                 </StackLayout>
                             </StackLayout>
 
-                            <Label Text="Description:" FontSize="Medium" Margin="5, 0" />
-                            <Editor x:Name="ProductDescription" Placeholder="Enter Product Details"
+                            <Label Text="Descrizione:" FontSize="Medium" Margin="5, 0" />
+                            <Editor x:Name="ProductDescription" Placeholder="Inserisci i Dettagli Del Prodotto"
                                 HeightRequest="100" />
 
-                            <Label Text="Expiry Date:" FontSize="Medium" Margin="5, 0" />
+                            <Label Text="Data di Scadenza:" FontSize="Medium" Margin="5, 0" />
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Entry x:Name="ProductExpiry"
                                    HorizontalOptions="FillAndExpand"
-                                   Placeholder="Enter Expiry Date"/>
+                                   Placeholder="Inserisci la Scadenza"/>
                             </StackLayout>
                         </StackLayout>
                     </Grid>
                 </StackLayout>
 
                 <Grid ColumnDefinitions="*">
-                    <Button Grid.Column="0" Text="Update Product"  Margin="0, 5" Clicked="Button_Clicked"/>
+                    <Button Grid.Column="0" Text="Aggiornamento del prodotto"  Margin="0, 5" Clicked="Button_Clicked"/>
                 </Grid>
 
             </VerticalStackLayout>

@@ -42,7 +42,7 @@ public partial class ProductEditPage : ContentPage
             string.IsNullOrWhiteSpace(ProductDescription.Text) ||
             string.IsNullOrWhiteSpace(ProductExpiry.Text))
         {
-            await DisplayAlert("Alert", "Please fill are the details before saving", "Okay");
+            await DisplayAlert("Attenzione", "Per favore inserisci tutti i dettagli prima di salvare.", "OK");
             return;
         }
 
@@ -88,7 +88,7 @@ public partial class ProductEditPage : ContentPage
             else
             {
                 // User canceled taking a photo
-                await DisplayAlert("Cancelled", "Taking photo was cancelled", "OK");
+                await DisplayAlert("Cancellato", "Lo scatto della foto è stato annullato", "OK");
             }
         }
         catch (Exception ex)

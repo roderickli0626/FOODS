@@ -191,9 +191,9 @@ public partial class MainPage : ContentPage
         try
         {
             List<string> detectedLines = new();
-            ProductExpiry.Text = "Scanning Pic, please wait.";
+            ProductExpiry.Text = "Scansione di Pic, attendere.";
 
-            await DisplayAlert("Alert", "Please Take a photo of Expire Date", "Okay");
+            await DisplayAlert("Attenzione", "Per favore fai una foto alla data di scadenza del prodotto.", "Conferma");
 
             var file = await TakePhotoAsync();
 
@@ -206,7 +206,7 @@ public partial class MainPage : ContentPage
 
             if (detectedLines.Count < 1)
             {
-                ProductExpiry.Text = "Captured picture was not clear!";
+                ProductExpiry.Text = "L'immagine catturata non era chiara!";
                 return;
             }
 
@@ -222,7 +222,7 @@ public partial class MainPage : ContentPage
             }
             else
             {
-                ProductExpiry.Text = "No proper date format found";
+                ProductExpiry.Text = "Non è stato trovato un formato di data corretto";
             }
         }
         catch (Exception ex)
@@ -237,7 +237,7 @@ public partial class MainPage : ContentPage
             string.IsNullOrWhiteSpace(ProductDescription.Text) ||
             string.IsNullOrWhiteSpace(ProductExpiry.Text))
         {
-            await DisplayAlert("Alert", "Please fill are the details before saving", "Okay");
+            await DisplayAlert("Attenzione", "Per favore inserisci tutti i dettagli prima di salvare.", "OK");
             return;
         }
 
@@ -255,7 +255,7 @@ public partial class MainPage : ContentPage
         var _productsItems = await _repository.QueryGetAsync<ProductItem>();
         if (_productsItems.Count > 29)
         {
-            await DisplayAlert("Alert", "In free version, you can store only 30 products. For more product, please get purchased one.", "Okay");
+            await DisplayAlert("Attenzione", "Nella versione gratuita, è possibile memorizzare solo 30 prodotti. Per un numero maggiore di prodotti, è necessario acquistarne una.", "OK");
             return;
         }
 
@@ -291,9 +291,9 @@ public partial class MainPage : ContentPage
         var request = new NotificationRequest
         {
             NotificationId = 1000,
-            Title = $"Product: {name} Expiring today!",
-            Subtitle = "Alert...",
-            Description = "Click to open",
+            Title = $"Prodotto: {name} Scadenza oggi!",
+            Subtitle = "Attenzione...",
+            Description = "Clicca per aprire",
             BadgeNumber = 1,
 
             Schedule = new NotificationRequestSchedule
@@ -356,7 +356,7 @@ public partial class MainPage : ContentPage
             else
             {
                 // User canceled taking a photo
-                await DisplayAlert("Cancelled", "Taking photo was cancelled", "OK");
+                await DisplayAlert("Cancellato", "Lo scatto della foto è stato annullato", "OK");
             }
         }
         catch (Exception ex)
@@ -480,12 +480,12 @@ public partial class MainPage : ContentPage
             var str = Regex.Replace(result, @"\s", "");
             ProductBarcode.Text = str;
 
-            ProductLabel.Text = ProductDescription.Text = "Fetching Details...";
+            ProductLabel.Text = ProductDescription.Text = "Recupero dei dettagli...";
 
             HideBarcodeView(true);
 
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-            string text = "Wait. Product Information is Scratching...";
+            string text = "Aspettate. Le informazioni sul prodotto si stanno grattando...";
             ToastDuration duration = ToastDuration.Long;
             double fontSize = 18;
             var toast = CommunityToolkit.Maui.Alerts.Toast.Make(text, duration, fontSize);
@@ -497,7 +497,7 @@ public partial class MainPage : ContentPage
             {
                 if (string.IsNullOrWhiteSpace(productDetails?.Title))
                 {
-                    ProductLabel.Text = "No data found";
+                    ProductLabel.Text = "Nessun dato trovato";
                 }
                 else
                 {
@@ -506,7 +506,7 @@ public partial class MainPage : ContentPage
 
                 if (string.IsNullOrWhiteSpace(productDetails?.Description))
                 {
-                    ProductDescription.Text = "No data found";
+                    ProductDescription.Text = "Nessun dato trovato";
                 }
                 else
                 {
@@ -515,8 +515,8 @@ public partial class MainPage : ContentPage
             }
             else
             {
-                ProductLabel.Text = "No data found";
-                ProductDescription.Text = "No data found";
+                ProductLabel.Text = "Nessun dato trovato";
+                ProductDescription.Text = "Nessun dato trovato";
             }
 
             
@@ -570,7 +570,7 @@ public partial class MainPage : ContentPage
             }
             catch (Exception ex)
             {
-                ProductLabel.Text = ProductDescription.Text = "Error in scanning barcode";
+                ProductLabel.Text = ProductDescription.Text = "Errore nella scansione del codice a barre";
             }
         });
         

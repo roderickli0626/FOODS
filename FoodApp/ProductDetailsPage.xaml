@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodApp.ProductDetailsPage"
-             Title="Product Details">
+             Title="Dettagli del prodotto">
     
     <StackLayout>
 
@@ -93,6 +93,6 @@
 
         </CollectionView>
 
-        <Button VerticalOptions="End" Clicked="ClickedCancel" Text="Cancel" Margin="10"/>
+        <Button VerticalOptions="End" Clicked="ClickedCancel" Text="Annulla" Margin="10"/>
     </StackLayout>
 </ContentPage>

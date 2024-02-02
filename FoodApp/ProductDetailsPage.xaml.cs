@@ -35,7 +35,7 @@ public partial class ProductDetailsPage : ContentPage
     {
         if (sender is Microsoft.Maui.Controls.Image deleteIcon && deleteIcon.BindingContext is ProductItem productItem)
         {
-            bool answer = await DisplayAlert("Delete Entry", "Are you sure?", "Yes", "No");
+            bool answer = await DisplayAlert("Elimina voce", "È sicuro che?", "Sì", "No");
 
             if (answer)
             {

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="FoodApp.MainPage"
-             Title="Enter Product details">
+             Title="Inserisci il dettaglio del prodotto">
 
     <Grid>
         <StackLayout Padding="15" Grid.Row="1" x:Name="stackViewBarcode" VerticalOptions="CenterAndExpand">
@@ -13,7 +13,7 @@
                            HeightRequest="300"
                            BarcodeDetected="CameraView_BarcodeDetected" />
 
-            <Button VerticalOptions="EndAndExpand" Clicked="ClickedCancel" Text="Cancel scanning" Margin="0, 30"/>
+            <Button VerticalOptions="EndAndExpand" Clicked="ClickedCancel" Text="Cancella la scansione" Margin="0, 30"/>
         </StackLayout>
 
         <ScrollView x:Name="scrollViewData" Margin="0">
@@ -25,36 +25,36 @@
                             <Image x:Name="productImage" Source="empty.jpg" WidthRequest="140" HeightRequest="140"
                                    HorizontalOptions="Center" />
 
-                            <Button Text="Scan Barcode"
+                            <Button Text="Scansiona il Barcode"
                                     Clicked="ClickedBarcode"
                                     FontSize="Small" VerticalOptions="Center" Margin="0, 10" />
 
                         </StackLayout>
 
                     <StackLayout Grid.Row="1" VerticalOptions="Start" Spacing="10">
-                            <Label Text="Product Label:" FontSize="Medium" Margin="5, 0" />
-                            <Entry x:Name="ProductLabel" Placeholder="Enter Product Name" />
+                            <Label Text="Etichetta:" FontSize="Medium" Margin="5, 0" />
+                            <Entry x:Name="ProductLabel" Placeholder="Prodotto" />
 
                             <StackLayout Orientation="Horizontal">
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                    <Label Text="Barcode:" FontSize="Medium" Margin="6, 0" />
-                                    <Entry x:Name="ProductBarcode" Placeholder="Enter Barcode" />
+                                    <Label Text="Lista Prodotti:" FontSize="Medium" Margin="6, 0" />
+                                    <Entry x:Name="ProductBarcode" Placeholder="Codice a Barre" />
                                 </StackLayout>
                                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                                    <Label Text="Price:" FontSize="Medium" Margin="6, 0" />
-                                    <Entry x:Name="ProductPrice" Placeholder="Enter Price" />
+                                    <Label Text="Prezzo:" FontSize="Medium" Margin="6, 0" />
+                                    <Entry x:Name="ProductPrice" Placeholder="Inserisci il Prezzo" />
                                 </StackLayout>
                             </StackLayout>
                             
-                            <Label Text="Description:" FontSize="Medium" Margin="5, 0" />
-                            <Editor x:Name="ProductDescription" Placeholder="Enter Product Details"
+                            <Label Text="Descrizione:" FontSize="Medium" Margin="5, 0" />
+                            <Editor x:Name="ProductDescription" Placeholder="Inserisci i Dettagli Del Prodotto"
                                     HeightRequest="100" />
 
-                            <Label Text="Expiry Date:" FontSize="Medium" Margin="5, 0" />
+                            <Label Text="Data di Scadenza:" FontSize="Medium" Margin="5, 0" />
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                                 <Entry x:Name="ProductExpiry"
                                        HorizontalOptions="FillAndExpand"
-                                       Placeholder="Enter Expiry Date"/>
+                                       Placeholder="Inserisci la Scadenza"/>
                                 <Button Text="+" HorizontalOptions="End" Clicked="ClickedExpiry"/>
                             </StackLayout>
                     </StackLayout>
@@ -62,15 +62,15 @@
             </StackLayout>
 
             <Grid ColumnDefinitions="*, *">
-                <Button Grid.Column="0" Text="Save Product"  Margin="0, 5" Clicked="ClickedSave"/>
-                <Button Grid.Column="1" Text="View Saved" Margin="10, 5" Clicked="ClickedViewRecords"/>
+                <Button Grid.Column="0" Text="Salva il Prodotto"  Margin="0, 5" Clicked="ClickedSave"/>
+                <Button Grid.Column="1" Text="Vedi gli Altri Salvati" Margin="10, 5" Clicked="ClickedViewRecords"/>
             </Grid>
 
                 <Button
                     Grid.ColumnSpan="2"
                     x:Name="btnRinger"
                     IsVisible="false"
-                    Text="Stop Ringing"
+                    Text="Smettere di suonare"
                     Clicked="ClickedStopRinging"
                     HorizontalOptions="FillAndExpand"/>
         </VerticalStackLayout>
