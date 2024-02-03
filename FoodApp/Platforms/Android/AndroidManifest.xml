@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.expiryreminder" android:versionCode="1" android:versionName="1.0">
-	<application android:allowBackup="true" android:supportsRtl="true" android:label="Expiry Reminder" android:icon="@mipmap/appicon">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.foodapp" android:versionCode="1" android:versionName="1.0">
+	<application android:allowBackup="true" android:supportsRtl="true" android:label="FoodApp" android:icon="@mipmap/appicon">
 		<receiver android:name="com.companyname.expiryreminder.Platforms.AndroidOS.AlarmReceiver" android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.ALARM" />
