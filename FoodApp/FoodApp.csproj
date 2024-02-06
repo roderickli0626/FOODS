@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android</TargetFrameworks>
+		<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -51,14 +51,16 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<None Remove="Resources\AppIcon\foods.png" />
 		<None Remove="Resources\Images\edit.png" />
 		<None Remove="Resources\Images\preview.png" />
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" />
+		<MauiIcon Include="Resources\AppIcon\foods.png" />
 		<MauiImage Include="Resources\Raw\empty.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
+		<PackageReference Include="IronOcr" Version="2024.2.41" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Plugin.Maui.Audio" Version="2.1.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
@@ -67,6 +69,7 @@
 		<PackageReference Include="Camera.MAUI" Version="1.4.4" />
 		<PackageReference Include="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" Version="7.0.1" />
 		<PackageReference Include="Azure.AI.Vision.ImageAnalysis" Version="1.0.0-beta.1" />
+		<PackageReference Include="Tesseract" Version="5.2.0" />
 		<PackageReference Include="TesseractOcrMaui" Version="1.1.5" />
 	</ItemGroup>
 
