@@ -485,7 +485,7 @@ public partial class MainPage : ContentPage
             HideBarcodeView(true);
 
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-            string text = "Aspettate. Le informazioni sul prodotto si stanno grattando...";
+            string text = "Un attimo, sto ottenendo le informazioni sul prodotto...";
             ToastDuration duration = ToastDuration.Long;
             double fontSize = 18;
             var toast = CommunityToolkit.Maui.Alerts.Toast.Make(text, duration, fontSize);
