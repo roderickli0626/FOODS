@@ -159,8 +159,8 @@ public partial class MainPage : ContentPage
             //string endpoint = "ENTER YOUR AZURE END-POINT";
             //string key = "ENTER AZURE SUBSCRIPTION KEY";
 
-            string endpoint = "https://expiryreminder.cognitiveservices.azure.com/";
-            string key = "8e8adf77430a44b2a2b941905e0d1462";
+            string endpoint = "https://appfood.cognitiveservices.azure.com/";
+            string key = "ff63030a4ef141f296cda35a64cd40c8";
 
 
             ImageAnalysisClient client = new ImageAnalysisClient(
