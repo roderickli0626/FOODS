@@ -159,8 +159,8 @@ public partial class MainPage : ContentPage
             //string endpoint = "ENTER YOUR AZURE END-POINT";
             //string key = "ENTER AZURE SUBSCRIPTION KEY";
 
-            string endpoint = "https://appfood.cognitiveservices.azure.com/";
-            string key = "ff63030a4ef141f296cda35a64cd40c8";
+            string endpoint = "https://appfoddss.cognitiveservices.azure.com/";
+            string key = "7aaf2248cd6b4000bace993baa8ab804";
 
 
             ImageAnalysisClient client = new ImageAnalysisClient(
